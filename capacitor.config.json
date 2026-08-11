@@ -1,0 +1,8 @@
+{
+  "appId": "id.mis.cokroaminoto.absensiqr",
+  "appName": "Absensi QR Kelas 6",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
