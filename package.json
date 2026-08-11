@@ -1,0 +1,14 @@
+{
+  "name": "absensi-qr-kelas-6-mis-cokroaminoto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplikasi Absensi QR Siswa Kelas 6 MIS Cokroaminoto Panyingkiran",
+  "scripts": {
+    "build:web": "node -e \"const fs=require('fs'); fs.mkdirSync('www',{recursive:true}); for(const f of ['index.html','style.css','app.js']) fs.copyFileSync(f,'www/'+f)\""
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/cli": "latest"
+  }
+}
