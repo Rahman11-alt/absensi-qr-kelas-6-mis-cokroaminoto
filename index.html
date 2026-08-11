@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f766e"><title>Absensi QR — Kelas 6 MIS Cokroaminoto</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<header><div><h1>ABSENSI QR SISWA</h1><p>MIS Cokroaminoto Panyingkiran • Kelas 6</p></div><span>Wali Kelas: Abdul Rahman, S.Pd.</span></header>
+<main>
+<nav><button class="active" data-tab="dashboard">Dashboard</button><button data-tab="scan">📷 Scan QR</button><button data-tab="students">👥 Data Siswa</button><button data-tab="reports">📊 Rekap</button></nav>
+
+<section id="dashboard" class="tab"><div class="hero"><h2>Absensi Kelas 6</h2><p>Scan QR siswa atau catat kehadiran secara manual.</p></div>
+<div class="stats"><article><b id="todayPresent">0</b><small>Hadir Hari Ini</small></article><article><b id="studentCount">0</b><small>Total Siswa</small></article><article><b id="monthTotal">0</b><small>Absensi Bulan Ini</small></article><article><b id="rate">0%</b><small>Rata-rata Kehadiran</small></article></div>
+<div class="card"><div class="cardhead"><h3>Absensi Hari Ini</h3><button class="secondary" id="refresh">Refresh</button></div><div id="todayTable"></div></div></section>
+
+<section id="scan" class="tab hidden"><div class="grid2"><div class="card"><h2>📷 Scan QR</h2><p>Arahkan kamera ke QR siswa.</p><div id="reader"></div><div id="scanStatus" class="notice">Kamera belum dimulai.</div><button id="startScan">Mulai Kamera</button><button class="secondary" id="stopScan">Hentikan</button></div>
+<div class="card"><h2>Absensi Manual</h2><form id="manualForm"><label>Siswa<select id="manualStudent" required></select></label><label>Status<select id="manualStatus"><option>Hadir</option><option>Izin</option><option>Sakit</option><option>Alpa</option></select></label><button>Simpan Absensi</button></form></div></div></section>
+
+<section id="students" class="tab hidden"><div class="toolbar"><button id="addStudent">+ Tambah Siswa</button><button class="secondary" id="importBtn">Import CSV</button><button class="secondary" id="exportStudents">Export Siswa</button><button class="secondary" id="printCards">Cetak QR</button><input id="search" placeholder="Cari nama/NISN..."></div><input id="csvFile" type="file" accept=".csv" hidden><div class="card"><div id="studentTable"></div></div></section>
+
+<section id="reports" class="tab hidden"><div class="toolbar"><label>Bulan <input type="month" id="month"></label><button id="exportExcel">📥 Export Excel</button></div><div class="card"><div id="reportTable"></div></div></section>
+</main>
+<div id="modal" class="modal hidden"><div class="modalbox"><button id="closeModal" class="x">×</button><h2 id="modalTitle">Tambah Siswa</h2><form id="studentForm"><input type="hidden" id="editId"><label>NISN/ID<input id="nisn" required></label><label>Nama Lengkap<input id="name" required></label><label>Jenis Kelamin<select id="gender"><option value="L">Laki-laki</option><option value="P">Perempuan</option></select></label><button>Simpan</button></form></div></div>
+<footer>© 2026 MIS Cokroaminoto Panyingkiran • Absensi QR Kelas 6</footer>
+<script src="app.js"></script>
+</body></html>
